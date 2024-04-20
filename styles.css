@@ -2,24 +2,10 @@
     text-align: center;
 }
 
-
 h1, h2 {
     font-weight: bold;
 }
 
-.main-buttons { 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 10px;
-    cursor: pointer;
-}
-
-.main-buttons button {
-    margin: 0px 10px;
-    padding: 5px;
+#main-buttons-field button {
+    background-color: aqua;
 }
