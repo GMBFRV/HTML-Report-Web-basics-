@@ -14,21 +14,14 @@ h1, h2 {
 }
 
 #sidebar {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
+    float: left;
+    width: 200px;
 }
 
-#lab1-sidebar {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
+
+
+.side_buttons {
+    display: block;
+    width: 100%; /* розтягує кнопку на всю ширину бічної панелі */
+    text-align: left; /* вирівнює текст кнопки зліва */
 }
