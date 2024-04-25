@@ -22,6 +22,6 @@ h1, h2 {
 
 .side_buttons {
     display: block;
-    width: 100%; /* розтягує кнопку на всю ширину бічної панелі */
-    text-align: left; /* вирівнює текст кнопки зліва */
+    width: 100%;
+    text-align: left;
 }
