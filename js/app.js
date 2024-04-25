@@ -1,7 +1,3 @@
-// ---------------------------------------------------------------------------------------------------------------------
-// --------------------------------------------------- GENERAL ---------------------------------------------------------
-// ---------------------------------------------------------------------------------------------------------------------
-
 const pathInitContent = "reports/init-content.html"
 
 function fetchContent(url, sourceId, targetId) {
@@ -17,18 +13,16 @@ function fetchContent(url, sourceId, targetId) {
     xhr.send();
 }
 
-function changeCurrentReport(src) {
+function SetReport(src) {
     handleLabChange(src)
 }
 
 function handleLabChange(value) {
     let sourceId = value + "-sidebar"
-    fetchContent(pathInitContent, sourceId, "sidebar");
+    fetchContent(pathInitContent, sourceId, "side-btn-wrapper");
 }
 
-// ---------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------ LAB1 ---------------------------------------------------------
-// ---------------------------------------------------------------------------------------------------------------------
+
 
 const pathLab1 = "reports/lab1.html"
 
@@ -41,7 +35,7 @@ function lab1LoadSecondArticle() {
 }
 
 function lab1LoadThirdArticle() {
-    fetchContent(pathLab1, "p3-btn", "sidebar");
+    fetchContent(pathLab1, "p3-btn", "side-btn-wrapper");
 }
 
 function lab1LoadThirdArticlePart1() {
@@ -57,7 +51,7 @@ function lab1LoadThirdArticlePart3() {
 }
 
 function lab1BackAndLoadSidebar() {
-    fetchContent(pathInitContent, "lab1-sidebar", "sidebar");
+    fetchContent(pathInitContent, "lab1-sidebar", "side-btn-wrapper");
 }
 
 
