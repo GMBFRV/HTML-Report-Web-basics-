@@ -19,12 +19,8 @@ function SetReport(src) {
 
 function handleLabChange(value) {
     let sourceId = value + "-sidebar"
-    fetchContent(pathInitContent, sourceId, "side-btn-wrapper");
+    fetchContent(pathInitContent, sourceId, "sidebar");
 }
-
-// ---------------------------------------------------------------------------------------------------------------------
-// ------------------------------------------------------ LAB1 ---------------------------------------------------------
-// ---------------------------------------------------------------------------------------------------------------------
 
 const pathLab1 = "reports/lab1.html"
 
@@ -37,7 +33,7 @@ function lab1LoadSecondArticle() {
 }
 
 function lab1LoadThirdArticle() {
-    fetchContent(pathLab1, "p3-btn", "side-btn-wrapper");
+    fetchContent(pathLab1, "p3-btn", "sidebar");
 }
 
 function lab1LoadThirdArticlePart1() {
@@ -53,7 +49,7 @@ function lab1LoadThirdArticlePart3() {
 }
 
 function lab1BackAndLoadSidebar() {
-    fetchContent(pathInitContent, "lab1-sidebar", "side-btn-wrapper");
+    fetchContent(pathInitContent, "lab1-sidebar", "sidebar");
 }
 
 
