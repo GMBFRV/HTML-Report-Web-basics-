@@ -1,25 +1,69 @@
-.centered {
-    text-align: center;
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
-h1, h2 {
-    font-weight: bold;
+.heading-wrapper {
+    flex: 1;
 }
 
-#main-buttons-field button {
-    margin: 5px 10px;
-    padding: 10px;
-    border: 1px solid black;
-    background-color: antiquewhite;
+    .heading-wrapper p {
+        text-align: center;
+    }
+
+.photo-wrapper {
+    margin-right: 5%;
+}
+
+
+#lab-btn-wrapper {
+    display: flex;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.lab-btn {
+    margin: 0.5%;
+    border-radius: 5px;
+    height: 50px;
+    width: 10%;
+    cursor: pointer;
 }
 
 #side-btn-wrapper {
-    text-align: left;
-    margin-top: 20px; 
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
 }
 
 .side-btn {
-    display: block;
-    margin-bottom: 10px; 
+    margin: 5%;
+    height: 7.5%;
+    width: 90%;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
+#output {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    padding: 25px;
+    border: 1px solid #aaa;
+    text-align: left;
+    width: 95%;
+}
+
+.wrapper {
+    ;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100px auto;
+}
