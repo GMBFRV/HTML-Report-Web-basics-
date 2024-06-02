@@ -1,0 +1,127 @@
+<div id="p1">
+    <p>
+        <b style="font-size: 1.2em">Тема:</b>
+        КЛАСИ. ОБ'ЄКТНА МОДЕЛЬ ДОКУМЕНТА (DOM). ПОДІЇ. ОБ'ЄКТ ПОДІЇ. ДЕЛЕГУВАННЯ ПОДІЙ. THROTTLE. МОДУЛЬНОСТЬ КОДУ
+    </p>
+    <b style="font-size: 1.2em">Мета:</b>
+    <ul>
+        <li>
+            придбати практичні навички роботи з об'єктами. Методи об'єкта Callback. Стрілочні функції. <br>Стрілочні функції як колбеки. Реалізація програм засовами мови JAVASCRIPT
+        </li>
+    </ul>
+
+    <h3 style="font-size: 1.2em; margin: 0.5em 0">Місце розташування:</h3>
+    <ul>
+        <li>
+            Github репозиторій сторінки зі звітами:
+            <a href="https://github.com/GMBFRV/HTML-Report-Web-basics-" target="_blank">click</a>
+        </li>
+    </ul>
+</div>
+
+<div id="p2">
+        <h2>Постановка задачі:</h2>
+        <p>У звітному HTML-документі створити html-розміту, яка складається з наступних елементів : текст, кнопка, два інпута (поля введення ). 
+          <br>Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
+          <br>Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
+        </p>
+        
+        <div class="container">
+          <h1>Обмін вмістом інпутів</h1>
+          <label for="input1">Вміст 1:</label>
+          <input type="text" id="input1" value="Вміст 1 за замовчуванням">
+          <br>
+          <label for="input2">Вміст 2:</label>
+          <input type="text" id="input2" value="Вміст 2 за замовчуванням">
+          <br>
+          <button id="swapButton" onclick="swapInputs()">SWAP ME</button>
+        </div>
+</div>
+
+<div id="p3">
+    <h1>Динамічний розмір квадрата</h1>
+    <div id="square" style="width: 150px; height: 150px; background-color: #007bff; margin: 20px auto; border: 1px solid #ccc;"></div>
+    <button onclick="Зменшити()">Зменшити</button>
+    <button onclick="Збільшити()">Збільшити</button>
+  </div>
+  
+<div id="p4">
+    <h1>Подвоєння значень списку</h1>
+
+  <ul id="myList">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <button id="doubleButton" onclick="doubleListValues()">Подвоїти</button>
+</div>
+
+<div id="p5">
+  <ul id="categories">
+    <li class="item">
+      <h2>Animals</h2>
+      <ul>
+        <li>Cat</li>
+        <li>Hamster</li>
+        <li>Horse</li>
+        <li>Parrot</li>
+      </ul>
+    </li>
+    <li class="item">
+      <h2>Products</h2>
+      <ul>
+        <li>Bread</li>
+        <li>Prasley</li>
+        <li>Cheese</li>
+      </ul>
+    </li>
+    <li class="item">
+      <h2>Technologies</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+      </ul>
+    </li>
+  </ul>
+    <button onclick="processCategories()">Вивести результат в консоль</button>
+</div>
+
+<div id="p6">
+  <form class="login-form">
+    <label>
+      Email
+      <input type="email" name="email" />
+    </label>
+    <br />
+    <label>
+      Password
+      <input type="password" name="password" />
+    </label>
+    <br />
+    <button type="submit">Log in</button>
+  </form>
+</div>
+
+
+<div id="p7">
+  <body style="background-color: white;">
+    <div class="widget">
+      <p>Background color: <span class="color">-</span></p>
+      <button type="button" class="change-color" onclick="ChangeColor()">Change color</button>
+    </div>
+</div>
+
+<div id="p8">
+  <div id="controls">
+    <input type="number" min="1" max="100" step="1" />
+    <button type="button" data-create onclick="Create()">Create</button>
+    <button type="button" data-destroy onclick="destroyBoxes()">Destroy</button>
+  </div>
+  <div id="boxes"></div>  
+</div>

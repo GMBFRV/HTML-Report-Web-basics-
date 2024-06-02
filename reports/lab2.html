@@ -69,55 +69,65 @@
     <h3>Селектори тегу:</h3>
     <p>Приклад використання:</p>
     <code>
-        &lt;header&gt;...&lt;/header&gt;<br><br>
-        header { height: 130px; width: 100%; background-color: #FFFFFF; top: 0; left: 0; right: 0; font-family:
-        sans-serif; }
+        HTML код:
+        &lt;header&gt;...&lt;/header&gt;<br>
+        CSS код:
+        header {
+            background-color: #333333;
+            padding: 20px;
+            width: 100%;
+        }
     </code>
-    <img src="img/lab2/screenshot1.png" alt="" style="width: 100%; margin: 25px 0">
+    <img src="images/header.jpg" alt="" style="width: 100%; margin: 25px 0">
 </div>
 
 <div id="p3-2">
     <h3>Селектори класу:</h3>
     <p>Приклад використання:</p>
-    <pre><code><br>&lt;div class="top-btn-wrapper"&gt;<br>  &lt;div class="buttons"&gt;<br>     &lt;a href="">Робота&lt;/a&gt;<br>     &lt;a href="">Питання-відповіді&lt;/a&gt;<br>     &lt;a href="">Вхід&lt;/a&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;
-            </code></pre>
     <code>
-        .top-btn-wrapper { display: flex; justify-content: flex-end; height: 20px; top: 0; left: 0; right: 0;
-        width: 100%; }
+        HTML код:
+        &lt;a href="#about" class="nav-link"&gt;ПРО НАС&lt;/a&gt;<br>
+        CSS код:
+        .nav-link {
+            color: white;
+            padding: 10px;
+        }
     </code>
     <br>
-    <img src="img/lab2/screenshot2.png" alt="" style="width: 100%; margin: 50px 0">
+    <img src="images/header.jpg" alt="" style="width: 100%; margin: 25px 0">
 </div>
 
 <div id="p3-3">
     <h3>Селектори ідентифікаторів:</h3>
     <p>Приклад використання:</p>
     <code>
-        &lt;img id="company-logo" src="img/header/logo.png" alt=""&gt;&lt;br&gt;<br><br>
-        #company-logo { width: 100px; height: 100px; }
+        HTML код:
+        &lt;div id="promotion"&gt;&lt;/div&gt;<br>
+        CSS код: 
+        #promotion {
+            text-align: center;
+        }
     </code><br>
-    <img src="img/lab2/screenshot3.png" alt="" style="margin: 25px 0">
+    <img src="images/promotion.jpg" alt="" style="margin: 25px 0">
 </div>
 
 <div id="p3-4">
     <h3>Інші селектори:</h3>
-    <p>Приклад використання:</p>
-    <ol>
-        <li>
-            Універсальний селектор:<br>
-            <code>
-                * { font-family: sans-serif; }
-            </code>
-            <br>
-            <img src="img/lab2/screenshot4.png" alt="" style="width: 100%; margin: 50px 0">
-        </li>
         <li>
             Дочірні селектори:<br>
             <code>
-                .search-form > input { flex: 1; border: none; outline: none; background-color: #F5F5F5; padding: 0 15px;
-                height: 30px; }
+                HTML код:
+                &lt;div id="promotion"&gt;
+                &lt;img src="images/2.jpg" alt="Promotion Image"&gt;
+                &lt;/div&gt;<br>
+                CSS код:
+                #promotion img {
+                    margin-top: 50px;
+                    width: 50%;
+                    height: auto;
+                }
             </code><br>
-            <img src="img/lab2/screenshot8.png" alt="" style="width: 500px; margin: 50px 0">
+            <img src="images/promotion.jpg" alt="" style="margin: 25px 0">
         </li>
     </ol>
 </div>
@@ -128,36 +138,29 @@
         <li>
             Шрифти:<br>
             <code>
-                * { font-family: sans-serif; }
+                body {
+                    font-family: 'Merriweather', serif;
+                }
             </code><br>
-            <img src="img/lab2/screenshot5.png" alt="" style="margin: 25px 0; border: 2px solid gray">
+            <img src="images/font.jpg" alt="" style="margin: 25px 0; border: 2px solid gray">
         </li>
         <li>
             Фон:<br>
             <code>
-                main { background-color: #F8F8F8; }<br>
-                <img src="img/lab2/screenshot6.png" alt="" style="margin: 25px 0; border: 2px solid gray">
-            </code>
-        </li>
-        <li>
-            Таблиці:<br>
-            <code>
-                .categories-wrapper { display: flex; flex-wrap: wrap; width: 650px; margin: 20px auto;
-                justify-content: space-between; }<br>
-
-                .category-wrapper { display: flex; flex-direction: column; width: 200px; height: 200px;
-                background-color: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin: 5px; }<br>
-
-                <img src="img/lab2/screenshot7.png" alt=""
-                     style="margin: 25px 0; border: 2px solid gray; width: 500px">
+                body {
+                    background-color: antiquewhite;
+                }
+                <img src="images/background-color.jpg" alt="" style="width: 100%;margin: 25px 0; border: 2px solid gray">
             </code>
         </li>
         <li>
             Колір тексту:<br>
             <code>
-                width: 400px; height: 43px; align-items: center; color: #ececec; background-color: #F5F5F5;
-                border-radius: 10px; }<br>
-                <img src="img/lab2/screenshot8.png" alt="" style="margin: 25px 0; border: 2px solid gray">
+                .nav-link {
+                    color: white;
+                    padding: 10px;
+                }
+                <img src="images/header.jpg" alt="" style="width: 100%;margin: 25px 0; border: 2px solid gray">
             </code>
         </li>
     </ol>

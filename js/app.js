@@ -168,3 +168,140 @@ function lab3LoadFourthArticlePart3() {
 function lab3LoadConclusions() {
     fetchContent(pathLab3, "lab3-conclusions", "output")
 }
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB4 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab4 = "reports/lab4.html"
+
+function lab4LoadFirstArticle() {
+    fetchContent(pathLab4, "p1", "output");
+}
+
+function lab4LoadSecondArticle() {
+    fetchContent(pathLab4, "p2", "output")
+}
+
+function lab4LoadThirdArticle() {
+    fetchContent(pathLab4, "p3", "output");
+}
+
+
+function lab4LoadFourthArticle() {
+    fetchContent(pathLab4, "p4", "output")
+}
+
+
+function lab4LoadConclusions() {
+    fetchContent(pathLab4, "p5", "output")
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB5 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab5 = "reports/lab5.html"
+
+function lab5LoadFirstArticle() {
+    fetchContent(pathLab5, "p1", "output");
+}
+
+function lab5LoadSecondArticle() {
+    fetchContent(pathLab5, "p2", "output")
+}
+
+function lab5LoadThirdArticle() {
+    fetchContent(pathLab5, "p3", "output");
+}
+
+
+function lab5LoadConclusions() {
+    fetchContent(pathLab5, "p4", "output")
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB5.1 -------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab51 = "reports/lab5.1.html"
+
+function lab51LoadFirstArticle() {
+    fetchContent(pathLab51, "p1", "output");
+}
+
+function lab51LoadSecondArticle() {
+    fetchContent(pathLab51, "p2", "output")
+}
+
+function lab51LoadThirdArticle() {
+    fetchContent(pathLab51, "p3", "output");
+}
+
+
+function lab51LoadFourthArticle() {
+    fetchContent(pathLab51, "p4", "output")
+}
+
+function lab51LoadFifthArticle() {
+    fetchContent(pathLab51, "p5", "output")
+}
+
+function lab51LoadSixthArticle() {
+    fetchContent(pathLab51, "p6", "output")
+}
+
+function lab51LoadSeventhArticle() {
+    fetchContent(pathLab51, "p7", "output")
+}
+
+
+function lab51LoadConclusions() {
+    fetchContent(pathLab51, "p8", "output")
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB6 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab6 = "reports/lab6.html"
+
+function lab6LoadFirstArticle() {
+    fetchContent(pathLab6, "p1", "output");
+}
+
+function lab6LoadSecondArticle() {
+    fetchContent(pathLab6, "p2", "output")
+}
+
+function lab6LoadThirdArticle() {
+    fetchContent(pathLab6, "p3", "output");
+}
+
+
+function lab6LoadFourthArticle() {
+    fetchContent(pathLab6, "p4", "output")
+}
+
+function lab6LoadFifthArticle() {
+    fetchContent(pathLab6, "p5", "output")
+}
+
+function lab6LoadSixthArticle() {
+    fetchContent(pathLab6, "p6", "output")
+}
+
+function lab6LoadSeventhArticle() {
+    fetchContent(pathLab6, "p7", "output")
+}
+
+function lab6LoadEighthArticle() {
+    fetchContent(pathLab6, "p8", "output")
+}
+
+function lab6LoadConclusions() {
+    fetchContent(pathLab6, "p9", "output")
+}
+

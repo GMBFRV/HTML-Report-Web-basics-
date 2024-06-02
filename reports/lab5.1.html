@@ -1,0 +1,271 @@
+<div id="p1">
+    <p>
+        <b style="font-size: 1.2em">Тема:</b>
+        ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ. 
+    </p>
+    <b style="font-size: 1.2em">Мета:</b>
+    <ul>
+        <li>
+            придбати практичні навички роботи з об'єктами. Методи об'єкта. Callback. Стрілочні функції. Стрілочні функції як колбеки.
+            Реалізація програм засовами мови JAVASCRIPT
+        </li>
+    </ul>
+
+    <h3 style="font-size: 1.2em; margin: 0.5em 0">Місце розташування:</h3>
+    <ul>
+        <li>
+            Github репозиторій сторінки зі звітами:
+            <a href="https://github.com/GMBFRV/HTML-Report-Web-basics-" target="_blank">click</a>
+        </li>
+    </ul>
+</div>
+
+<div id="p2">
+    <h2> Постановка задачі:</h2>
+    <p>Напишіть функцію getProductDetails, яка приймає ідентифікатор товару productId та дві колбек-функції successCallback та errorCallback.
+        <br>// Функція getProductDetails повинна отримати деталі про вказаний товар та передати їх у successCallback.  
+        <br>// У випадку якщо товар не знайдено, викликається errorCallback і передається повідомлення про помилку.
+    </p>
+    <h2> Розроблений JavaScript код: </h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+         const products = [
+         { id: 1, name: "Телефон", price: 1000 },
+         { id: 2, name: "Ноутбук", price: 2500 },
+         { id: 3, name: "Планшет", price: 1500 },
+     ];
+
+     function getProductDetails(productId, successCallback, errorCallback) {
+         const product = products.find(product => product.id === productId);
+
+         if (product) {
+             successCallback(product);
+         } else {
+             errorCallback("Товар не знайдено");
+         }
+     }
+
+     const productIdInput = document.getElementById("product-id-input");
+     const getDetailsButton = document.getElementById("get-details-button");
+     const productDetailsDiv = document.getElementById("product-details");
+     getDetailsButton.addEventListener("click", () => {
+     const productId = parseInt(productIdInput.value);
+
+         getProductDetails(productId,
+             (product) => {
+                 productDetailsDiv.style.display = "block";
+                 productDetailsDiv.innerHTML = `
+                     <h2>${product.name}</h2>
+                     <p>Ціна: ${product.price}</p>
+                 `;
+             },
+             (errorMessage) => {
+                 productDetailsDiv.style.display = "block";
+                 productDetailsDiv.innerHTML = `<p style="color: red;">${errorMessage}</p>`;
+             }
+         );
+     });
+    </textarea>
+    <h2> Результати тестування:</h2>
+        <img src="images/task2.jpg" alt="" style="width: 50%">
+</div>
+
+<div id="p3">
+    <h2> Постановка задачі:</h2>
+    <p>З об'єкту concerts отримати масив, який буде містити лише імена міст.
+        З масиву потрібно прибрати міста, в яких концерт  уже пройшов і   відсортувати їх у хронологічному порядку.
+        Результат вивести у консоль.
+        Очікуваний результат ["Одеса", "Умань", "Харків"]
+      Застосувати стрілочні функції
+      const concerts = {
+          Київ: new Date("2020-04-01"),
+          Умань: new Date("2025-07-02"),
+          Вінниця: new Date("2020-04-21"),
+          Одеса: new Date("2025-03-15"),
+          Хмельницький: new Date("2020-04-18"),
+          Харків: new Date("2025-07-10"),
+      };
+      
+    </p>
+    <h2> Розроблений JavaScript код: </h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+        const concerts = {
+            Київ: new Date("2020-04-01"),
+            Умань: new Date("2025-07-02"),
+            Вінниця: new Date("2020-04-21"),
+            Одеса: new Date("2025-03-15"),
+            Хмельницький: new Date("2020-04-18"),
+            Харків: new Date("2025-07-10"),
+          };
+          const today = new Date("2020-07-01");
+          
+          const upcomingConcerts = Object.entries(concerts)
+            .filter(([city, date]) => date >= today)
+            .map(([city]) => city);
+          
+          upcomingConcerts.sort((a, b) => concerts[a] - concerts[b]);
+          
+          console.log(upcomingConcerts);        
+    </textarea>
+    <h2> Результати тестування:</h2>
+        <img src="images/Lab5.1Task4.jpg" alt="" style="width: 50%">
+</div>
+
+<div id="p4">
+    <h2> Постановка задачі:</h2>
+    <p>Напишіть функцію, яка приймає массив об'єктів і повертає новий массив об'єктів,у якому є знижка на  30 % на всі медикаменти ціна, яких перевищує 300 грн у масиві Надайте ід для кожного медикамента    const medicines = [
+        { name: "Noshpa", price: 170 },
+        { name: "Analgin", price: 55 },
+        { name: "Quanil", price: 310 },
+        { name: "Alphacholine", price: 390 },
+      ];
+    
+    </p>
+    <h2> Розроблений JavaScript код: </h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+       const applyDiscount = (medicines) => {
+        return medicines.map((medicine) => {
+          const discountedPrice = medicine.price > 300 ? medicine.price * 0.7 : medicine.price;
+          return {
+            id: medicine.name, 
+            name: medicine.name,
+            price: discountedPrice,
+          };
+        });
+      };
+      const discountedMedicines = applyDiscount(medicines);
+      console.log(discountedMedicines);
+    
+    </textarea>
+    <h2> Результати тестування:</h2>
+        <img src="images/Lab5.1Task6.jpg" alt="" style="width: 50%">
+</div>
+
+<div id="p5">
+    <h2> Постановка задачі:</h2>
+    <p>Напиши функцію конструктор Storage який створює об'єкти  Для управління складом товарів.  При виклику отримуватиме один агрумент - початковий масив товарів,  і записувати їх у властивість items. 
+        Додай методи класу:   getItems() - повертайте масив товарів   addItems(item) - отримує новий товар та додає його до поточних   removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних  
+      const arr = ["apple", "banana", "mango"]
+    </p>
+    <h2> Розроблений JavaScript код: </h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+         class Storage {
+            constructor(initialItems) {
+              this.items = initialItems || []; 
+            }
+          
+            getItems() {
+              return this.items; 
+            }
+          
+            addItems(item) {
+              this.items.push(item); 
+            }
+          
+            removeItem(item) {
+              const index = this.items.indexOf(item);
+              if (index !== -1) {
+                this.items.splice(index, 1);
+              }
+            }
+          }
+          
+          const storage = new Storage(arr);
+          console.log(storage.getItems());
+          
+          storage.addItems("orange");
+          console.log(storage.getItems());
+          
+          storage.removeItem("banana");
+          console.log(storage.getItems());
+    </textarea>
+    <h2> Результати тестування:</h2>
+        <img src="images/Lab5.1Task8.jpg" alt="" style="width: 50%">
+</div>
+
+<div id="p6">
+    <h2> Постановка задачі:</h2>
+    <p>Поверніть об'єкт, в якому вказано кількість тегів.
+        Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
+        
+         const tweets = [
+            { id: "000", likes: 5, tags: ["js", "nodejs"] },
+            { id: "001", likes: 2, tags: ["html", "css"] },
+            { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+            { id: "003", likes: 8, tags: ["css", "react"] },
+            { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+            ];                
+    </p>
+    <h2> Розроблений JavaScript код: </h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+           const tweets = [
+           { id: "000", likes: 5, tags: ["js", "nodejs"] },
+           { id: "001", likes: 2, tags: ["html", "css"] },
+           { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+           { id: "003", likes: 8, tags: ["css", "react"] },
+           { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+         ];
+         
+         const tagCounts = tweets.reduce((counts, tweet) => {
+           tweet.tags.forEach((tag) => {
+             counts[tag] = counts[tag] ? counts[tag] + 1 : 1;
+           });
+           return counts;
+         }, {});
+    </textarea>
+    <h2> Результати тестування:</h2>
+        <img src="images/Lab5.1Task9.jpg" alt="" style="width: 50%">
+</div>
+
+<div id="p7">
+    <h2> Постановка задачі:</h2>
+    <p>Напишіть функцію checkBrackets(str) яка приймає рядок жс коду (someFn)  і перевіряє правильність закриття дужок () {} []
+        Якщо рядок містить коректний код функція повертає true.
+        В іншому випадку повертає false            
+    </p>
+    <h2> Розроблений JavaScript код: </h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+             function checkBrackets(str) {
+                const stack = []; 
+              
+                for (let i = 0; i < str.length; i++) {
+                  const char = str[i];
+              
+                  switch (char) {
+                    case "(":
+                    case "{":
+                    case "[":
+                      stack.push(char);
+                      break;
+              
+                    case ")":
+                    case "}":
+                    case "]":
+                      if (stack.length === 0) {
+                        return false;
+                      }
+              
+                      const topChar = stack.pop(); 
+                      if (
+                        (topChar === "(" && char !== ")") ||
+                        (topChar === "{" && char !== "}") ||
+                        (topChar === "[" && char !== "]")
+                      ) {
+                        return false; 
+                      }
+                      break;
+                  }
+                }
+              
+                return stack.length === 0;
+              }
+            
+    </textarea>
+    <h2> Результати тестування:</h2>
+        <img src="images/Lab5.1Task10.jpg" alt="" style="width: 50%">
+</div>
