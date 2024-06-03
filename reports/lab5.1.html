@@ -230,41 +230,41 @@
     <h2> Розроблений JavaScript код: </h2>
     <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
                 color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
-             function checkBrackets(str) {
-                const stack = []; 
-              
-                for (let i = 0; i < str.length; i++) {
-                  const char = str[i];
-              
-                  switch (char) {
-                    case "(":
-                    case "{":
-                    case "[":
-                      stack.push(char);
-                      break;
-              
-                    case ")":
-                    case "}":
-                    case "]":
-                      if (stack.length === 0) {
+           function checkBrackets(str) {
+            const stack = [];
+            const bracketPairs = {
+                '(': ')',
+                '{': '}',
+                '[': ']'
+            };
+        
+            for (let char of str) {
+                if (bracketPairs[char]) {
+                    stack.push(char);
+                } else if (Object.values(bracketPairs).includes(char)) {
+                    const lastBracket = stack.pop();
+                    if (bracketPairs[lastBracket] !== char) {
                         return false;
-                      }
-              
-                      const topChar = stack.pop(); 
-                      if (
-                        (topChar === "(" && char !== ")") ||
-                        (topChar === "{" && char !== "}") ||
-                        (topChar === "[" && char !== "]")
-                      ) {
-                        return false; 
-                      }
-                      break;
-                  }
+                    }
                 }
-              
-                return stack.length === 0;
-              }
-            
+            }
+        
+            return stack.length === 0;
+        }
+        
+        function checkAndDisplayResult() {
+          const codeInput = document.getElementById('codeInput');
+          const codeStr = codeInput.value.trim();
+          const resultElement = document.getElementById('result');
+        
+          if (!codeStr) {
+            resultElement.textContent = 'Введіть код JavaScript';
+            return;
+          }
+        
+          const result = checkBrackets(codeStr);
+          resultElement.textContent = result ? 'Дужки закрито правильно' : 'Помилка в дужках';
+        }   
     </textarea>
     <h2> Результати тестування:</h2>
         <img src="images/Lab5.1Task10.jpg" alt="" style="width: 50%">
