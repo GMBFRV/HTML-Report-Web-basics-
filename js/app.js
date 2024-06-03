@@ -210,7 +210,7 @@ function lab5LoadFirstArticle() {
 }
 
 function lab5LoadSecondArticle() {
-    fetchContent(pathLab5, "p2", "output")
+    fetchContent(pathLab5, "p2", "output");
 }
 
 function lab5LoadThirdArticle() {
@@ -219,7 +219,7 @@ function lab5LoadThirdArticle() {
 
 
 function lab5LoadConclusions() {
-    fetchContent(pathLab5, "p4", "output")
+    fetchContent(pathLab5, "p4", "output");
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -233,7 +233,7 @@ function lab51LoadFirstArticle() {
 }
 
 function lab51LoadSecondArticle() {
-    fetchContent(pathLab51, "p2", "output")
+    fetchContent(pathLab51, "p2", "output");
 }
 
 function lab51LoadThirdArticle() {
@@ -242,24 +242,24 @@ function lab51LoadThirdArticle() {
 
 
 function lab51LoadFourthArticle() {
-    fetchContent(pathLab51, "p4", "output")
+    fetchContent(pathLab51, "p4", "output");
 }
 
 function lab51LoadFifthArticle() {
-    fetchContent(pathLab51, "p5", "output")
+    fetchContent(pathLab51, "p5", "output");
 }
 
 function lab51LoadSixthArticle() {
-    fetchContent(pathLab51, "p6", "output")
+    fetchContent(pathLab51, "p6", "output");
 }
 
 function lab51LoadSeventhArticle() {
-    fetchContent(pathLab51, "p7", "output")
+    fetchContent(pathLab51, "p7", "output");
 }
 
 
 function lab51LoadConclusions() {
-    fetchContent(pathLab51, "p8", "output")
+    fetchContent(pathLab51, "p8", "output");
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -273,7 +273,7 @@ function lab6LoadFirstArticle() {
 }
 
 function lab6LoadSecondArticle() {
-    fetchContent(pathLab6, "p2", "output")
+    fetchContent(pathLab6, "p2", "output");
 }
 
 function lab6LoadThirdArticle() {
@@ -282,26 +282,79 @@ function lab6LoadThirdArticle() {
 
 
 function lab6LoadFourthArticle() {
-    fetchContent(pathLab6, "p4", "output")
+    fetchContent(pathLab6, "p4", "output");
 }
 
 function lab6LoadFifthArticle() {
-    fetchContent(pathLab6, "p5", "output")
+    fetchContent(pathLab6, "p5", "output");
 }
 
 function lab6LoadSixthArticle() {
-    fetchContent(pathLab6, "p6", "output")
+    fetchContent(pathLab6, "p6", "output");
 }
 
 function lab6LoadSeventhArticle() {
-    fetchContent(pathLab6, "p7", "output")
+    fetchContent(pathLab6, "p7", "output");
 }
 
 function lab6LoadEighthArticle() {
-    fetchContent(pathLab6, "p8", "output")
+    fetchContent(pathLab6, "p8", "output");
 }
 
 function lab6LoadConclusions() {
-    fetchContent(pathLab6, "p9", "output")
+    fetchContent(pathLab6, "p9", "output");
 }
 
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB7 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab7 = "reports/lab7.html"
+
+function lab7LoadFirstArticle() {
+    fetchContent(pathLab7, "p1", "output");
+}
+
+function lab7LoadSecondArticle() {
+    fetchContent(pathLab7, "p2", "output");
+}
+
+function lab7LoadThirdArticle() {
+    fetchContent(pathLab7, "p3", "output");
+}
+
+function lab7LoadConclusions() {
+    fetchContent(pathLab7, "p4", "output");
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB8 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab8 = "reports/lab8.html"
+
+function lab8LoadFirstArticle() {
+    fetchContent(pathLab8, "p1", "output");
+}
+
+function lab8LoadSecondArticle() {
+    fetchContent(pathLab8, "p2", "output");
+}
+
+function lab8LoadThirdArticle() {
+    fetchContent(pathLab8, "p3", "output");
+}
+
+function lab8LoadFourthArticle() {
+    fetchContent(pathLab8, "p4", "output");
+}
+
+function lab8LoadFifthArticle() {
+    fetchContent(pathLab8, "p5", "output");
+}
+
+function lab8LoadSixthArticle() {
+    fetchContent(pathLab8, "p6", "output");
+}

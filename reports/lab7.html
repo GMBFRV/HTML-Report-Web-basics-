@@ -1,0 +1,302 @@
+<div id="p1">
+    <p>
+        <b style="font-size: 1.2em">Тема:</b>
+        WEB-СХОВИЩЕ. WEB STORAGE API. МОДУЛЬНОСТЬ  КОДУ. СТВОРЕННЯ МОДАЛЬНОГО ВІКНА. ДЕЛЕГУВАННЯ ПОДІЙ.
+    </p>
+    <b style="font-size: 1.2em">Мета:</b>
+    <ul>
+        <li>
+            придбати практичні навички роботи створення модального вікна; повторити процес створення макету,<br>
+             зокрема створення макету галереї довільних зображень; закріпити навички роботи з делегуванням подій.
+        </li>
+    </ul>
+
+    <h3 style="font-size: 1.2em; margin: 0.5em 0">Місце розташування:</h3>
+    <ul>
+        <li>
+            Github репозиторій сторінки зі звітами:
+            <a href="https://github.com/GMBFRV/HTML-Report-Web-basics-" target="_blank">click</a>
+        </li>
+        <li>
+            Github репозиторій проекту:
+            <a href="https://github.com/GMBFRV/Lab7" target="_blank">click</a>
+        </li>
+    </ul>
+</div>
+
+<div id="p2">
+    <h2>Завдання:</h2>
+    <ul> 
+        <li>1.	Створити репозиторій у GitHub</li>
+        <li> 2.	Створити посилання на живу сторінку.</li>
+        <li> 3.	Склонувати репозиторій на свій комп’ ютер.</li>
+        <li>  4.	Створити файл index.html і дві папки: CSS та JS. У папці CSS створити файл style.css. У папці JS створити файл gallery.js</li>
+        <li> 5.	В Figma створити макет галереї довільних зображень. Зразок макету можна подивитись  за посиланням  https://www.figma.com/design/m8k9NQV7qZrtYDCvxfD68B/%D0%94%D0%97-JavaScript?node-id=3-941&t=pjPWtBAEZqJYzmz0-0</li>
+        <li> 6.	 Виконай верстку власного макету. В HTML коді  (index.html ) додай тег контейнера галереї — невпорядкований список із класом gallery, згідно макету.<br>
+        <textarea><ul class="gallery"></ul></textarea></li>
+        
+        <li>7.	У свій JavaScript файл додай масив зображень. Кожний об’єкт являє собою один елемент галереї.
+        •	preview — посилання на маленьку версію зображення для картки галереї
+        •	original — посилання на велику версію зображення для модального вікна
+        •	description — текстовий опис зображення, для атрибута alt малого зображення та підпису великого зображення в модалці.
+        const images = [
+            {
+              preview: 
+                'https://…..',
+              original:
+                'https://….',
+              description: ' текстовий опис зображення ',
+            },
+            {
+              preview: 
+                'https://…..',
+              original:
+                'https://….',
+              description: ' текстовий опис зображення ',
+            },
+        Добавляєте потрібну кількість зображень,
+        
+        ];</li>
+        
+        <li> 8.	Виконати в JavaScript коді розмітку елементів, після чого додати усю розмітку всередину ul.gallery.</li>
+        <li>9.	Додати стилізацію галереї згідно макету.</li>
+        <li> 10.	 Виконати делегування, а саме  додати функціонал прослуховування кліка по елементах галереї та отримання посилання на велике зображення при кліку. Для цього використовуй прийом делегування на ul.gallery. Поки що при кліку на елемент галереї виводь у консоль посилання на велике зображення.</li>
+        <li> 11.	Підключення бібліотеки. </li>
+        Бібліотека basicLightbox представляє повністю функціональне модальне вікно, яке відмінно підходить під поставлену  задачу. Використовуйте CDN сервіс jsdelivr і додай в HTML файл посилання на мініфіковані (.min) JS та CSS файли бібліотеки.
+        basicLightbox - https://github.com/electerious/basicLightbox/tree/master
+        CDN сервіс jsdelivr  -   https://www.jsdelivr.com/package/npm/basiclightbox?path=dist
+        
+       <li> 12.	Модальне вікно
+        Доповнити свій код так, щоб при кліку по елементу галереї відкривалось модальне вікно підключеної бібліотеки. Для того щоб дізнатися, як ініціалізувати модальне вікно у своєму коді і як його використовувати, ознайомся з документацією і прикладами.
+        
+        Документація  https://github.com/electerious/basicLightbox#readme
+             Приклади  - https://basiclightbox.electerious.com/
+        
+        
+        ВАРТО ЗВЕРНУТИ УВАГУ:
+        •	На живій сторінці відображається галерея зображень із масиву даних images
+        •	Галерея зображень стилізована згідно з макетом
+        •	Дані для галереї створені динамічно в JS
+        •	Під час прослуховування події натискання на елементи галереї використаний прийом делегування
+        •	При кліку між елементами галереї нічого не відбувається
+        •	Підключена бібліотека basicLightbox
+        •	При кліку по елементу галереї відкривається модальне вікно підключеної бібліотеки, в якому міститься збільшена версія зображення, по якому клікнули</li>
+    </ul>
+    <h2>Результат:</h2>
+    <img src="images/Lab7Task1.jpg" alt="" style="width: 50%">
+    <img src="images/Lab7Task1.1.jpg" alt="" style="width: 50%">
+
+    <h2>HTML код:</h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Image Gallery</title>
+                    <link rel="stylesheet" href="css/style.css">
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+                </head>
+                <body>
+                    <ul class="gallery"></ul>
+                
+                    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+                    <script src="js/gallery.js"></script>
+                </body>
+                </html>
+            </textarea>
+
+    <h2>JS код:</h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+    color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+        const images = [
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/5dde/4622/0907ed8fd691000bbe73fee51101d8ee?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BWXa5sf-HRjp13TtXRMNvAFIysHl4nSLYIC9B1cQFh6RWe015GDLTMz0w5bj-nYg6DbDQpStlHLrqubrujoW4Tq2EXhTLUat4f49hKIeT9IUh5Svz-GhHkudIVJtwmbl3wCJ8FQVJe666oNT6cD3tS2LnCa~2Eil3BVwxZZWihdBTA9iY2EXab6PDXsALU3ciCMv39C9AnBl8tiy6Jpw1vIlQrWNB-0WfxJ~DiM2MiXxHoAH9WoO4W3FvQ2eY3CzW9It~0OOBmxZrct-Lsj--K50Hv9pJM8veNqM6iTHrpQuEZoigeIFRZZf6VGye3oteHHQA5~C7PhHxZ3kqWc34Q__',
+            original: 'https://s3-alpha-sig.figma.com/img/5dde/4622/0907ed8fd691000bbe73fee51101d8ee?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BWXa5sf-HRjp13TtXRMNvAFIysHl4nSLYIC9B1cQFh6RWe015GDLTMz0w5bj-nYg6DbDQpStlHLrqubrujoW4Tq2EXhTLUat4f49hKIeT9IUh5Svz-GhHkudIVJtwmbl3wCJ8FQVJe666oNT6cD3tS2LnCa~2Eil3BVwxZZWihdBTA9iY2EXab6PDXsALU3ciCMv39C9AnBl8tiy6Jpw1vIlQrWNB-0WfxJ~DiM2MiXxHoAH9WoO4W3FvQ2eY3CzW9It~0OOBmxZrct-Lsj--K50Hv9pJM8veNqM6iTHrpQuEZoigeIFRZZf6VGye3oteHHQA5~C7PhHxZ3kqWc34Q__',
+            description: 'Опис зображення 1'
+        },
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/390f/d68d/955549ff429e815e5e2bade820721376?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Y0S6gz6lshvVmKfRtVYZhnQWd6JISooUNd-aWpSe7B6vGU0EFihC7tkZGLyPgalhMim827ge-9qSXlKrGY9k7bWbK~SM9CLxQ~stME-WVBvSblIV6leOZvej5jDmec~ujjx21Y1SdsgWTfEPuFuQmkf7T3YXjVgESXcqazbKoSC~KPbnBQGHU1XGISfvUPVZV2lzkzl7539G18JA59qhDeQSvIR8AQC-ibKUhpQExdotsZRjoPoSgf~GfT9tY3JSS1LK96fHWFCS8AW3SkSDKVdW9R-IpSoVVFVqbipx~4I5OIi3~8eoPQEYbLs5cs4EgFWD4vHCJsFzui~zn5nl2g__',
+            original: 'https://s3-alpha-sig.figma.com/img/390f/d68d/955549ff429e815e5e2bade820721376?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Y0S6gz6lshvVmKfRtVYZhnQWd6JISooUNd-aWpSe7B6vGU0EFihC7tkZGLyPgalhMim827ge-9qSXlKrGY9k7bWbK~SM9CLxQ~stME-WVBvSblIV6leOZvej5jDmec~ujjx21Y1SdsgWTfEPuFuQmkf7T3YXjVgESXcqazbKoSC~KPbnBQGHU1XGISfvUPVZV2lzkzl7539G18JA59qhDeQSvIR8AQC-ibKUhpQExdotsZRjoPoSgf~GfT9tY3JSS1LK96fHWFCS8AW3SkSDKVdW9R-IpSoVVFVqbipx~4I5OIi3~8eoPQEYbLs5cs4EgFWD4vHCJsFzui~zn5nl2g__',
+            description: 'Опис зображення 2'
+        },
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/48be/88f7/1998c160dc2be34a63b3f2183392ff8b?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=U3lNKlHtPKrt7qSmPhCsoTU2-AE20DK6Xu16~yUSo3cgCs6-p5~1gebUgTnQ4qL9S7m0y4WEjjTlmeijrOGyVy7-2-cTK-jdctOAA~e4mth0jadq9t374P~G02R~72vB9E6ykBtNY6aVvVLDaH0XgoEI7skQnyZqJlv-R4uznxLTbbuI5EmdQgfX5~XQ-rMTSU-OdzmCN0I1q7H4K4yhcZgtit6k3hbcCqoFyc7fzXHImOSsWPSDGOitdB2aV7AJlisEfI0R0Eiqvj9jQ0NFFz~faI-3NEbYTgOm~IfTRVSbR9bQOG1l27~ognlwswjAY0soA4UWLp23YMEng9~7UQ__',
+            original: 'https://s3-alpha-sig.figma.com/img/48be/88f7/1998c160dc2be34a63b3f2183392ff8b?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=U3lNKlHtPKrt7qSmPhCsoTU2-AE20DK6Xu16~yUSo3cgCs6-p5~1gebUgTnQ4qL9S7m0y4WEjjTlmeijrOGyVy7-2-cTK-jdctOAA~e4mth0jadq9t374P~G02R~72vB9E6ykBtNY6aVvVLDaH0XgoEI7skQnyZqJlv-R4uznxLTbbuI5EmdQgfX5~XQ-rMTSU-OdzmCN0I1q7H4K4yhcZgtit6k3hbcCqoFyc7fzXHImOSsWPSDGOitdB2aV7AJlisEfI0R0Eiqvj9jQ0NFFz~faI-3NEbYTgOm~IfTRVSbR9bQOG1l27~ognlwswjAY0soA4UWLp23YMEng9~7UQ__',
+            description: 'Опис зображення 3'
+        },
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/7391/477d/e6356a31941e3cc31c991e67894bb945?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nF1xR9D-eBBE0os2aXRYghN58geNJAKHNCg~7XQZo2zBiMQwaMoQn0vrZ9ZD6Wu-XUl5EPCv~kti7psfzGM8QeWDPi1BSD16FAi44KoFdai5zPtHaZ~3WsbRiQNp5NzKFl3UGR3crugzosl2WY1YNKDe4~7IL0i8jYHj3il8u9aouuJquJcc919gUByekclh2BtxXG2edRQlOYGySPZBOzLTRgA2MIjrUcOPCv9-QDkqsMEQzTAkR80Nw4Fjl0w4ILAtdR2zdHOQ8lu0daHrZUrXRehb4YWv1S91P5iwtHxzpkiGetsw6m1Yh3dZuWT-DkA4-fyGl~7DrmCaCCqRtA__',
+            original: 'https://s3-alpha-sig.figma.com/img/7391/477d/e6356a31941e3cc31c991e67894bb945?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nF1xR9D-eBBE0os2aXRYghN58geNJAKHNCg~7XQZo2zBiMQwaMoQn0vrZ9ZD6Wu-XUl5EPCv~kti7psfzGM8QeWDPi1BSD16FAi44KoFdai5zPtHaZ~3WsbRiQNp5NzKFl3UGR3crugzosl2WY1YNKDe4~7IL0i8jYHj3il8u9aouuJquJcc919gUByekclh2BtxXG2edRQlOYGySPZBOzLTRgA2MIjrUcOPCv9-QDkqsMEQzTAkR80Nw4Fjl0w4ILAtdR2zdHOQ8lu0daHrZUrXRehb4YWv1S91P5iwtHxzpkiGetsw6m1Yh3dZuWT-DkA4-fyGl~7DrmCaCCqRtA__',
+            description: 'Опис зображення 4'
+        },
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/c9a7/04d1/391760494c3ad88cab833c525eb33d6c?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=adTLSSK~b8bOh2sJl4~5X20nr6zieKTz~izqYsD4WOQs9H5ge4YT8h4h5BZsmJWxtdhsTwdNT6QCJxejW9lIXzTagtnKlxESTUkf7SgPc3hSrKNqR9mncSq2pkvI6IwOpPWPXl86mpwu-BWUlGuoU~oVg2X708zs-TU3pG5RwDVwq04kJpQbuLSGMURzg2t0rD5hPieOJOVoY9Yukqk5Nk8QiwfrFH7tCznwUf7K2vha6P91Wb~D6Jz5NBS2HGHRMUzLxuA44wOQ8cx1W6lrVXLpXw01Fi04gu0Zn~KpPuRkSf1vrDl-Q9karbVEBTNE0p0HQ6JMD8xmy6XQ6jJPDA__',
+            original: 'https://s3-alpha-sig.figma.com/img/c9a7/04d1/391760494c3ad88cab833c525eb33d6c?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=adTLSSK~b8bOh2sJl4~5X20nr6zieKTz~izqYsD4WOQs9H5ge4YT8h4h5BZsmJWxtdhsTwdNT6QCJxejW9lIXzTagtnKlxESTUkf7SgPc3hSrKNqR9mncSq2pkvI6IwOpPWPXl86mpwu-BWUlGuoU~oVg2X708zs-TU3pG5RwDVwq04kJpQbuLSGMURzg2t0rD5hPieOJOVoY9Yukqk5Nk8QiwfrFH7tCznwUf7K2vha6P91Wb~D6Jz5NBS2HGHRMUzLxuA44wOQ8cx1W6lrVXLpXw01Fi04gu0Zn~KpPuRkSf1vrDl-Q9karbVEBTNE0p0HQ6JMD8xmy6XQ6jJPDA__',
+            description: 'Опис зображення 5'
+        },
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/2bab/8cd4/1bcc5a2255da522ea2a79402020a7d5d?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pzgY9AgTR20qruxzNrtScAfQiDdmy0KX7obkJVsHVni7gd4JGgAHnCr2yJzBPlfNG0o8FwHxLJW1ska9j4PGBAVifK89PHqVaLJ51QZPV3pdET5Pvog0OJAwARCBVDCrVHMUIl3W1ZAtZCGMXV-AAdv05pOkJ4DljUXclmREm8bXdtOGIxgi7V7q~6wfVqdGGdbZuJ67LeFq8bnqaZC-GnkQE5D4mx0tYiB4eoNW4kkVg~0KUv3NVXzrkvBpJpnX2WSTPKIpXFHSLZVAUsgCqCMaUmjhJjhgzlo9lJWgZZkGJZZ8fEYg87Mp6AjFPqIMxjFaloWz~Vpd3xlvGPpnmw__',
+            original: 'https://s3-alpha-sig.figma.com/img/2bab/8cd4/1bcc5a2255da522ea2a79402020a7d5d?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pzgY9AgTR20qruxzNrtScAfQiDdmy0KX7obkJVsHVni7gd4JGgAHnCr2yJzBPlfNG0o8FwHxLJW1ska9j4PGBAVifK89PHqVaLJ51QZPV3pdET5Pvog0OJAwARCBVDCrVHMUIl3W1ZAtZCGMXV-AAdv05pOkJ4DljUXclmREm8bXdtOGIxgi7V7q~6wfVqdGGdbZuJ67LeFq8bnqaZC-GnkQE5D4mx0tYiB4eoNW4kkVg~0KUv3NVXzrkvBpJpnX2WSTPKIpXFHSLZVAUsgCqCMaUmjhJjhgzlo9lJWgZZkGJZZ8fEYg87Mp6AjFPqIMxjFaloWz~Vpd3xlvGPpnmw__',
+            description: 'Опис зображення 6'
+        },
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/0b5d/6f97/8746606f5644ab8bf836a19e68bd8246?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GZF7QSdMQZjDxsejLbSl3q4WwgBux4INlMFmf53GUjy7PDYt~IOB7ndOLHYNzKRXm9~7E7b9Wb70HdQu0yTErK809xrbwOIm6B087Abgu-zZsYW5aP0IY6Tu3XLpRSI84QBXapVwKWrXD2B44zWFpE1fIZBjmFZXmMb3389hozeX9g9JRpBU-64YJqy0h6rXa-UVkL5DatAKRt~LqQ1hiH0eUeRz18vONPDRyIsXiGL3sUxFxUoMTDTRDUJv7nFCJ2u2GEN9gxCDLiJRYJmxMc9APRcv2E5fVaoUI5XStozsVny3a8umkCNZRWa5JnQc0hB4SGO~bmjBHpZ--5e89w__',
+            original: 'https://s3-alpha-sig.figma.com/img/0b5d/6f97/8746606f5644ab8bf836a19e68bd8246?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GZF7QSdMQZjDxsejLbSl3q4WwgBux4INlMFmf53GUjy7PDYt~IOB7ndOLHYNzKRXm9~7E7b9Wb70HdQu0yTErK809xrbwOIm6B087Abgu-zZsYW5aP0IY6Tu3XLpRSI84QBXapVwKWrXD2B44zWFpE1fIZBjmFZXmMb3389hozeX9g9JRpBU-64YJqy0h6rXa-UVkL5DatAKRt~LqQ1hiH0eUeRz18vONPDRyIsXiGL3sUxFxUoMTDTRDUJv7nFCJ2u2GEN9gxCDLiJRYJmxMc9APRcv2E5fVaoUI5XStozsVny3a8umkCNZRWa5JnQc0hB4SGO~bmjBHpZ--5e89w__',
+            description: 'Опис зображення 7'
+        },
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/b7c3/63e3/3c57d745a2bada38125746fc6ec0d9cc?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lkPD7iLzRPmspuenVgooheAPzTMsBQOKRHdfRuI61e0hfML5cltxjrOEYYU4qBc0FbP~kjZc8a1bc7D3OA5t950p1QusQ1nxYKqRrEf5P-iT0FdX7kW7KyOhWNgi1ekZ~~0kB9dF3v9kYL3rJXPAsmkdoTZEGnX49WeOsEO-egJym3XmVgxwnfBXBcvzwTFZhYjk2mNhxwXWKmGSdRhkgf7LP7SqNwe1R8jWsAuVnbRIWkGC5nffxosHeTwjL~95b-sBUjmpBtcCjpHK~8bkgIQxthcvrOrr~MI-buiVQenP1wkGdE7XFkHHxMqABpF6L-VEotcGjNHbV-VUz5CYlA__',
+            original: 'https://s3-alpha-sig.figma.com/img/b7c3/63e3/3c57d745a2bada38125746fc6ec0d9cc?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lkPD7iLzRPmspuenVgooheAPzTMsBQOKRHdfRuI61e0hfML5cltxjrOEYYU4qBc0FbP~kjZc8a1bc7D3OA5t950p1QusQ1nxYKqRrEf5P-iT0FdX7kW7KyOhWNgi1ekZ~~0kB9dF3v9kYL3rJXPAsmkdoTZEGnX49WeOsEO-egJym3XmVgxwnfBXBcvzwTFZhYjk2mNhxwXWKmGSdRhkgf7LP7SqNwe1R8jWsAuVnbRIWkGC5nffxosHeTwjL~95b-sBUjmpBtcCjpHK~8bkgIQxthcvrOrr~MI-buiVQenP1wkGdE7XFkHHxMqABpF6L-VEotcGjNHbV-VUz5CYlA__',
+            description: 'Опис зображення 8'
+        },
+        {
+            preview: 'https://s3-alpha-sig.figma.com/img/3976/96b0/ca2f409c0e028c22bc862fa002981112?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aYHHDVOKVlSNojZaQpXXiA7cFgbKhip9WDUSbMN7Q5U1xnp-wsY1L33QuEi9NQK7MN-QLow0uiMf2Ajn9oTsMbJOywUeWs~5qDyEmqwVMvnH8lZUXU0DWHn7pXa-ivDO0fgEm2YJek7shAXMFFiQJ-nQj00Dk47C6LUoC99hI7LLs3wqYBmWd8~sUYKwqHLozBNRESfibMw71Xuh4zr0um29T9IjqfcnQIPIgFmzEw9im7qojCy8HPbhNINtwQyAKGBpgraDppB4gfqZSFkFFP0YkkU7Hg-moCGj7F8KJvK3AgcDb78JGIhixj0xp306aGTLRv9DhvxcrMjlUicyKA__',
+            original: 'https://s3-alpha-sig.figma.com/img/3976/96b0/ca2f409c0e028c22bc862fa002981112?Expires=1717977600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aYHHDVOKVlSNojZaQpXXiA7cFgbKhip9WDUSbMN7Q5U1xnp-wsY1L33QuEi9NQK7MN-QLow0uiMf2Ajn9oTsMbJOywUeWs~5qDyEmqwVMvnH8lZUXU0DWHn7pXa-ivDO0fgEm2YJek7shAXMFFiQJ-nQj00Dk47C6LUoC99hI7LLs3wqYBmWd8~sUYKwqHLozBNRESfibMw71Xuh4zr0um29T9IjqfcnQIPIgFmzEw9im7qojCy8HPbhNINtwQyAKGBpgraDppB4gfqZSFkFFP0YkkU7Hg-moCGj7F8KJvK3AgcDb78JGIhixj0xp306aGTLRv9DhvxcrMjlUicyKA__',
+            description: 'Опис зображення 9'
+        },
+    ];
+    
+    const gallery = document.querySelector('.gallery');
+    
+    const galleryMarkup = images.map(({ preview, original, description }) => {
+        return `
+            <li>
+                <img src="${preview}" data-source="${original}" alt="${description}">
+            </li>
+        `;
+    }).join('');
+    
+    gallery.innerHTML = galleryMarkup;
+    
+    gallery.addEventListener('click', (event) => {
+        event.preventDefault();
+    
+        if (event.target.nodeName !== 'IMG') return;
+    
+        const originalImageSrc = event.target.dataset.source;
+    
+        console.log(originalImageSrc);
+    
+        const instance = basicLightbox.create(`
+            <img src="${originalImageSrc}" alt="${event.target.alt}">
+        `);
+    
+        instance.show();
+    });
+    
+    </textarea>
+</div>
+
+
+
+<div id="p3">
+    <h2>Завдання:</h2>
+    <ul> 
+        <li>1.На макеті добавити форми (Приклад за посиланням https://www.figma.com/design/m8k9NQV7qZrtYDCvxfD68B/%D0%94%D0%97-JavaScript?node-id=3-969&t=ms4nQGevNBJzbAlx-0</li>
+        <li> 2.	Виконуй це завдання у файлах 2-form.html і 2-form.js </li>
+        <li> 3.	Додати у HTML розмітку форми. У JS написати скрипт, який буде зберігати значення полів у локальне сховище, коли користувач щось друкує.</li>
+        <li> 4.	Виконуй це завдання у файлах 2-form.html і 2-form.js. Розбий його на декілька підзавдань:</li>
+            	Оголосити поза будь-якими функціями об’єкт formData з полями email та message, які спочатку мають порожні рядки як значення: { email: "", message: "" }.
+            	Використовувати метод делегування для відстеження змін у формі через подію input. Зберігати актуальні дані з полів email та message у formData та записувати цей об’єкт у локальне сховище. Використовувати ключ "feedback-form-state" для зберігання даних у сховищі.
+            	При завантаженні сторінки перевірити, чи є дані у локальному сховищі. Якщо так, використовувати їх для заповнення форми та об'єкта formData. Якщо ні, залишити поля форми порожніми.
+            	Перед відправленням форми переконатися, що обидва поля форми заповнені. Якщо будь-яке з полів (властивостей об’єкта formData) порожнє, показати сповіщення з текстом «Fill please all fields». Якщо всі поля заповнені, вивести у консоль об’єкт formData з актуальними значеннями, очистити локальне сховище, об’єкт formData і поля форми.
+            
+            ВАРТО ЗВЕРНУТИ УВАГУ:
+            •	На живій сторінці відображається форма з двома елементами форми і кнопкою типу submit
+            •	Форма стилізована згідно з макетом
+            •	На формі прослуховуються події input і submit
+            •	При введенні даних у будь-який елемент форми вони записуються у локальне сховище під ключем "feedback-form-state", збережені дані не містять пробіли по краях
+            •	Введення даних в одне поле форми не видаляє дані в сховищі для іншого
+            •	При оновленні сторінки дані з локального сховища підставляються в елементи форми, у полях форми відсутні undefined
+            •	При сабміті форми є перевірка, щоб обидва елементи форми були заповнені
+            •	Під час сабміту форми, якщо обидва елементи форми заповнені, виводиться у консоль об'єкт з полями email, message та їхніми поточними значеннями, а також очищаються сховище і поля форми
+            •	Якщо після сабміту форми ввести в будь-який елемент форми дані, то в локальному сховищі не з’являються дані від попереднього сабміта
+            
+            
+    </ul>
+    <h2>Результат:</h2>
+    <img src="images/Lab7Task2.jpg" alt="" style="width: 50%">
+    <img src="images/Lab7Task2.1.jpg" alt="" style="width: 50%">
+
+    <h2>HTML код:</h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+                color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Feedback Form</title>
+                    <link rel="stylesheet" href="css/2-form.css">
+                </head>
+                <body>
+                    <form class="feedback-form" autocomplete="off">
+                        <label>
+                            Email
+                            <input type="email" name="email" autofocus />
+                        </label>
+                        <label>
+                            Message
+                            <textarea name="message" rows="8"></textarea>
+                        </label>
+                        <button type="submit">Submit</button>
+                    </form>
+                
+                    <script src="js/2-form.js"></script>
+                </body>
+                </html>
+                
+            </textarea>
+
+    <h2>JS код:</h2>
+    <textarea readonly style="font-family: monospace; background-color: #f4f7f8; border-left: 6px solid #558abb;
+    color: #4d4e53; width: 90%; padding: 10px 10px 0; height: 500px; ">
+        
+const formData = {
+    email: "",
+    message: ""
+};
+
+const form = document.querySelector('.feedback-form');
+const emailInput = form.elements.email;
+const messageInput = form.elements.message;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedData = localStorage.getItem('feedback-form-state');
+    if (savedData) {
+        const parsedData = JSON.parse(savedData);
+        formData.email = parsedData.email;
+        formData.message = parsedData.message;
+        emailInput.value = formData.email;
+        messageInput.value = formData.message;
+    }
+});
+
+form.addEventListener('input', event => {
+    formData[event.target.name] = event.target.value.trim();
+    localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+});
+
+form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    if (!formData.email || !formData.message) {
+        alert('Fill please all fields');
+        return;
+    }
+
+    console.log(formData);
+
+    localStorage.removeItem('feedback-form-state');
+    formData.email = "";
+    formData.message = "";
+    form.reset();
+});
+    </textarea>
+</div>
+
+<div id="p4">
+    
+</div>
