@@ -58,35 +58,27 @@ function processCategories() {
 
 // ------------------------------------------------------------------------- ЗАВДАННЯ №8 -----------------------------------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', function() {
+
+function handleSubmit(event) {
+  event.preventDefault(); 
   const loginForm = document.querySelector('.login-form');
+  const emailInput = loginForm.querySelector('input[name="email"]');
+  const passwordInput = loginForm.querySelector('input[name="password"]');
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  if (!email || !password) {
+    alert('All form fields must be filled in');
+    return;
+  }
+  const formData = {
+    email: email,
+    password: password
+  };
+  console.log('Form data:', formData);
+  loginForm.reset();
+}
 
-  loginForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Запобігаємо перезавантаженню сторінки
 
-    const form = event.target;
-    const email = form.elements['email'].value.trim();
-    const password = form.elements['password'].value.trim();
-
-    // Перевіряємо, чи всі поля заповнені
-    if (!email || !password) {
-      alert('All form fields must be filled in');
-      return;
-    }
-
-    // Збираємо дані у об'єкт
-    const formData = {
-      email: email,
-      password: password
-    };
-
-    // Виводимо дані у консоль
-    console.log(formData);
-
-    // Очищаємо форму
-    form.reset();
-  });
-});
 // ------------------------------------------------------------------------- ЗАВДАННЯ №9 -----------------------------------------------------------------------------------------
 
 function getRandomHexColor() {
