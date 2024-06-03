@@ -358,3 +358,29 @@ function lab8LoadFifthArticle() {
 function lab8LoadSixthArticle() {
     fetchContent(pathLab8, "p6", "output");
 }
+
+// ---------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------ LAB8 ---------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
+
+const pathLab9 = "reports/lab9.html"
+
+function lab9LoadFirstArticle() {
+    fetchContent(pathLab9, "p1", "output");
+}
+
+function lab9LoadSecondArticle() {
+    fetchContent(pathLab9, "p2", "output");
+}
+
+function lab9LoadThirdArticle() {
+    fetchContent(pathLab9, "p3", "output");
+}
+
+function lab9LoadFourthArticle() {
+    fetchContent(pathLab9, "p4", "output");
+}
+
+function lab9LoadSixthArticle() {
+    fetchContent(pathLab9, "p5", "output");
+}
