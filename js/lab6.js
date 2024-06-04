@@ -58,26 +58,34 @@ function processCategories() {
 
 // ------------------------------------------------------------------------- ЗАВДАННЯ №8 -----------------------------------------------------------------------------------------
 
+function addFormSubmitHandler() {
+  const form = document.querySelector(".login-form");
 
-function handleSubmit(event) {
-  event.preventDefault(); 
-  const loginForm = document.querySelector('.login-form');
-  const emailInput = loginForm.querySelector('input[name="email"]');
-  const passwordInput = loginForm.querySelector('input[name="password"]');
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
-  if (!email || !password) {
-    alert('All form fields must be filled in');
-    return;
+  if (form) {
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = form.elements["email"].value.trim();
+      const password = form.elements["password"].value.trim();
+
+      if (!email || !password) {
+        alert("All form fields must be filled in");
+        return;
+      }
+
+      const formData = {
+        email: email,
+        password: password
+      };
+
+      console.log(formData);
+
+      form.reset();
+    });
+  } else {
+    console.error("Форма не знайдена!");
   }
-  const formData = {
-    email: email,
-    password: password
-  };
-  console.log('Form data:', formData);
-  loginForm.reset();
 }
-
 
 // ------------------------------------------------------------------------- ЗАВДАННЯ №9 -----------------------------------------------------------------------------------------
 
